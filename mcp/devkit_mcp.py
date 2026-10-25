@@ -35,9 +35,14 @@ HOST, PORT = "127.0.0.1", 9877
 _ids = itertools.count(1)
 
 mcp = FastMCP("devkit", instructions=(
-    "Pilotage du DevKit ARK (UE 4.5.1) via le plugin DevKitApi. "
-    "Le DevKit doit etre lance (ARKDevKit.bat) pour que les outils repondent. "
-    "Commencer par devkit_ping ; editor_ready=false = editeur encore en chargement."
+    "Drives the ARK: Survival Evolved DevKit (UE 4.5.1) through the DevKitApi plugin. "
+    "The DevKit must be open; start with devkit_ping (editor_ready=false = still loading). "
+    "Asset paths are Unreal paths: /Game/<folder>/<Asset>.<Asset>; vanilla content under /Game/PrimalEarth/ is read-only. "
+    "Every mod lives in its own folder /Game/Mods/<ModName>/ and writes are only accepted under the roots listed in "
+    "DevKitApi_whitelist.txt next to the plugin DLL (a refused write says 'whitelist': ask the user to add the mod root "
+    "and restart the DevKit). Workflow: load_asset -> duplicate_asset into /Game/Mods/<ModName>/ -> get/set_property -> "
+    "compile_blueprint -> save_package; test in PIE with 'cheat summon <Asset>_C'. Never compile while PIE is running. "
+    "See CLAUDE.md in the repository for the full rules."
 ))
 
 

@@ -98,6 +98,11 @@ tools use to recover outputs that the editor truncates. Two other optional varia
 exports are cached, default `<repo>\cache\t3d`) and `DEVKITAPI_OUT_ROOT` (the only folder where tools may write
 `out_file` results, default the repository).
 
+**Run Claude Code from this repository folder** (`cd` into your clone before starting `claude`): the `CLAUDE.md` at
+the root tells Claude where mods live (`/Game/Mods/<ModName>/`), how the whitelist works, the standard
+load → duplicate → edit → compile → save workflow, and the traps to avoid. Without it Claude still works, but it has to
+discover these rules by trial and error.
+
 Start a **new** Claude Code session (tools are discovered at startup), check with `claude mcp list` that `devkit` is
 connected, and ask:
 
@@ -193,6 +198,7 @@ Two things the build **must** keep, learned the hard way:
 ## 9. Repository layout
 
 ```
+CLAUDE.md              rules Claude Code reads automatically when started from this folder (mod folders, whitelist, workflow, traps)
 plugin/DevKitApi/      ready-to-copy plugin folder (uplugin, DLL, whitelist)
 src/                   DLL source (DevKitApi.cpp, DevKitApi_Phase4.h, DevKitApi.rc) and build.bat
 mcp/devkit_mcp.py      MCP server for Claude Code
