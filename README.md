@@ -125,6 +125,24 @@ immediately.
 To test without cooking: press Play, open the console and type `cheat summon BigDodo_C` (the short class name works
 as long as the Blueprint is loaded in the editor).
 
+## 4b. What every mod needs (read this before your first real mod)
+
+- **A mod folder**: `/Game/Mods/<ModName>/` (on disk `Content\Mods\<ModName>\`), listed in the whitelist. Everything
+  the mod adds goes in there; vanilla assets are never edited, only duplicated.
+- **A PrimalGameData**: `PrimalGameData_BP_<ModName>` inside that folder. **No PGD, no mod**: the cooker starts from it
+  and the game reads it. Duplicate the small example `/Game/Mods/GigaRocket/PrimalGameData_BP_GigaRocket` shipped with
+  the DevKit (not the vanilla one, which is huge), then register your content in it: `AdditionalEngramBlueprintClasses`
+  for craftable items, `AdditionalStructuresToPlace` for structures, `ServerExtraWorldSingletonActorClasses` for an
+  actor that runs once per server, `ExtraResources` for anything nothing else references (a custom dino, an animation).
+  An asset the PGD does not reach is silently left out of the cooked mod.
+- **An engram per craftable item**, with the inherited requirements cleared (`EngramRequirementSets=()`) and
+  `bGiveBlueprintToPlayerInventory=True` for hand-crafted items. Engrams only show up in a cooked mod, not in PIE.
+- **Cooking**: in the DevKit, Steam Upload → pick the mod folder → cook, then add the mod to your server or client.
+  Logic can be tested in Play In Editor first; what actually ships is only proven by a cooked mod.
+
+The repository's `CLAUDE.md` gives Claude these rules plus the recipes that worked for us (items, weapons, zero-damage
+effect weapons, buffs, custom animations, composite structures, singleton actors).
+
 ## 5. The tools
 
 | Tool | What it does |
