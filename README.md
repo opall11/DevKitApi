@@ -229,5 +229,7 @@ tools/check_dll.py     verifies a rebuilt DLL
 
 ## License
 
-MIT. Made by OPALL with Claude Code. ARK: Survival Evolved and the ARK Dev Kit are property of Studio Wildcard;
-this project is not affiliated with them.
+**PolyForm Noncommercial 1.0.0**: free to use, modify and share for any noncommercial purpose (personal, hobby,
+community, education, research). **Commercial use is not permitted** (selling the tool, bundling it in a paid
+product or service). See `LICENSE`. Made by OPALL with Claude Code. ARK: Survival Evolved and the ARK Dev Kit are
+property of Studio Wildcard; this project is not affiliated with them.
