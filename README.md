@@ -20,6 +20,27 @@ limited to the mod folders you list in a whitelist file.
 
 ---
 
+## 0. Fastest way: let Claude Code install it for you
+
+You do not have to follow sections 1 to 3 by hand. Claude Code can clone this repository, copy the plugin into your
+DevKit, write the whitelist and register the MCP server itself. You only need the three requirements of section 1
+(the DevKit, Claude Code, Python 3 on the PATH), then open Claude Code anywhere and paste this, after filling in the
+two paths and your mod name:
+
+```
+Install DevKitApi from https://github.com/opall11/DevKitApi for me.
+1. Clone the repository into C:\DevKitApi and read its README.md and CLAUDE.md.
+2. My ARK DevKit is installed at C:\ARKDevKit\ARKEditor (the folder that contains Engine and Projects).
+   Copy plugin\DevKitApi into <DevKit>\Engine\Plugins\DevKitApi. Ask me before writing anything into the DevKit.
+3. In DevKitApi_whitelist.txt next to the DLL, add the line /Game/Mods/MyFirstMod/ (my mod folder).
+4. Run pip install mcp, then register the MCP server with: claude mcp add devkit -- python C:\DevKitApi\mcp\devkit_mcp.py
+5. Tell me exactly what you did, then remind me to start the DevKit and to open a new Claude Code session from C:\DevKitApi.
+```
+
+Claude Code does everything except two things it cannot do for you: **start the DevKit** (it has to be running for the
+plugin to load) and **open a new session** (MCP tools are discovered at startup). After that, run Claude Code from the
+clone folder and ask it to ping the DevKit (section 3). If you prefer to see each step, the manual procedure follows.
+
 ## 1. Requirements
 
 - Windows 10/11, 64-bit.
