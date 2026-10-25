@@ -1,0 +1,17 @@
+{
+    "FileVersion": 3,
+    "FriendlyName": "DevKitApi",
+    "Version": 1,
+    "VersionName": "1.0",
+    "CreatedBy": "OPALL",
+    "Description": "Local control socket for the ARK DevKit, driven by Claude Code through an MCP server",
+    "Category": "Tools",
+    "EnabledByDefault": true,
+    "Modules": [
+        {
+            "Name": "DevKitApi",
+            "Type": "Editor",
+            "LoadingPhase": "Default"
+        }
+    ]
+}

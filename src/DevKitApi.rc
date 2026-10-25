@@ -1,0 +1,10 @@
+// Ressource lue par FWindowsPlatformProcess::GetDllApiVersion (Core RVA 0x328A00) :
+// FindResourceW(hModule, MAKEINTRESOURCE(191), RT_RCDATA) -> chaine ASCII terminee par NUL,
+// convertie par _strtoui64 ; FModuleManager::CheckModuleCompatibility exige la valeur 0.
+// (Identique a UE4Editor-BlankPlugin.dll / Core / UnrealEd : RCDATA 191 = "0\0".)
+// Pas de VERSIONINFO : il n'est pas consulte par le chargeur (refs\layouts.md).
+LANGUAGE 0, 0
+191 RCDATA
+BEGIN
+    "0\0"
+END

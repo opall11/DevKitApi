@@ -1,0 +1,3 @@
+mcp>=1.0
+# optional, only for tools/check_dll.py :
+# pefile

@@ -1,0 +1,6 @@
+# DevKitApi - WRITE whitelist (one /Game/... root per line, '#' = comment).
+# Read once at editor startup by UE4Editor-DevKitApi.dll (this file must sit next to the DLL).
+# Only packages under these roots can be created / duplicated / saved / modified through the socket.
+# Vanilla content (/Game/PrimalEarth/...) is never writable. Edit the list, then restart the DevKit.
+/Game/Mods/DevKitApiTest/
+/Game/Mods/MyFirstMod/
